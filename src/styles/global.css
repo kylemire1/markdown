@@ -1,0 +1,23 @@
+html {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+}
+h3 {
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+body {
+  color: white;
+}
+h4 {
+  color: white;
+}
+
+img {
+  height: 500px;
+  max-width: 100%;
+}
