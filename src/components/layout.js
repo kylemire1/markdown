@@ -1,8 +1,8 @@
 import React from "react"
-import { css } from "@emotion/react"
+import { Global, css } from "@emotion/react"
 import { useStaticQuery, Link, graphql } from "gatsby"
-
 import { rhythm } from "../utils/typography"
+
 export default function Layout({ children }) {
   const data = useStaticQuery(
     graphql`
@@ -24,54 +24,69 @@ export default function Layout({ children }) {
         padding-top: ${rhythm(1.5)};
       `}
     >
-      <Link to={`/`}>
-        <h3
-          css={css`
-            margin-bottom: ${rhythm(2)};
+      <Global
+        styles={css`
+          h1 {
             display: inline-block;
-            font-style: italic;
-          `}
-        >
-          {data.site.siteMetadata.title}
-        </h3>
-      </Link>
+            border-bottom: 1px solid;
+          }
 
-      <Link
-        to={`/about/`}
+          main a {
+            color: white;
+            :hover {
+              color: red;
+            }
+          }
+        `}
+      />
+      <header
         css={css`
-          float: right;
-          color: red;
-          font-style: italic;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 2rem;
+
+          nav {
+            ul {
+              list-style: none;
+              display: flex;
+              align-items: center;
+            }
+            li + li {
+              margin-left: 20px;
+            }
+            a {
+              color: red;
+              font-style: italic;
+            }
+          }
         `}
       >
-        Characters
-      </Link>
+        <Link to={`/`}>
+          <h3
+            css={css`
+              font-style: italic;
+            `}
+          >
+            {data.site.siteMetadata.title}
+          </h3>
+        </Link>
+        <nav>
+          <ul>
+            <li>
+              <Link to={`/locations/`}>Locations</Link>
+            </li>
+            <li>
+              <Link to={`/monsters/`}>Monsters</Link>
+            </li>
+            <li>
+              <Link to={`/about/`}>Characters</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      <Link
-        to={`/monsters/`}
-        css={css`
-          float: right;
-          padding-right: 20px;
-          color: red;
-          font-style: italic;
-        `}
-      >
-        Monsters
-      </Link>
-
-      <Link
-        to={`/locations/`}
-        css={css`
-          float: right;
-          padding-right: 20px;
-          color: red;
-          font-style: italic;
-        `}
-      >
-        Locations
-      </Link>
-
-      {children}
+      <main>{children}</main>
     </div>
   )
 }

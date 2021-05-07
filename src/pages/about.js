@@ -1,6 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+
 export default function About({ data }) {
   return (
     <div>
@@ -13,9 +15,11 @@ export default function About({ data }) {
           considered the love of his life despite their tumultuous relationship,
           and became Ciri's adoptive father.
         </p>
-        <img
+        <StaticImage
           src="https://i.pinimg.com/originals/37/96/eb/3796ebefb26c38d7bfa1ae0097a02916.jpg"
           alt="Geralt"
+          width={335}
+          height={500}
         />
         <h3>Ciri</h3>
         <p>
@@ -25,9 +29,11 @@ export default function About({ data }) {
           go, as nobody simply refused the queen, but when he was summoned a
           short time later Calanthe retracted the order without explanation.
         </p>
-        <img
+        <StaticImage
           src="https://cdnb.artstation.com/p/assets/images/images/016/392/543/medium/astor-alexander-ciri-2100px.jpg?1551981786"
           alt="Ciri"
+          width={335}
+          height={500}
         />
         <h3>Yennefer</h3>
         <p>
@@ -37,9 +43,11 @@ export default function About({ data }) {
           claiming it was through her side, with mages and elven blood, not to
           mention her having had an abortion before, that caused the deformity.
         </p>
-        <img
+        <StaticImage
           src="https://cdna.artstation.com/p/assets/images/images/016/392/546/medium/astor-alexander-yennefer-2100px.jpg?1551981792"
           alt="Yennefer"
+          width={335}
+          height={500}
         />
       </Layout>
     </div>
