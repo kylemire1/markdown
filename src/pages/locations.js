@@ -9,7 +9,12 @@ export default function Locations({ data }) {
   return (
     <Layout>
       <div>
+        {/* I moved the header styles to a global style so we don't need to
+        set the css on every page. */}
         <h1>Pretty Places</h1>
+        {/* The way you were bringing in the description worked, but it was a little
+        unorthodox. You can achive the same effect in a similar way by just putting
+        the main description right in the template. */}
         <p>
           The game's world is divided into six open-world regions of varying
           size. These are White Orchard, the Royal Palace in Vizima, Velen and

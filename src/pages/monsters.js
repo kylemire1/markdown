@@ -9,14 +9,10 @@ export default function Monsters({ data }) {
   return (
     <Layout>
       <div>
-        <h1
-          css={css`
-            display: inline-block;
-            border-bottom: 1px solid;
-          `}
-        >
-          Beastiary
-        </h1>
+        <h1>Beastiary</h1>
+        {/* The way you were bringing in the description worked, but it was a little
+        unorthodox. You can achive the same effect in a similar way by just putting
+        the main description right in the template. */}
         <p>
           The Witcher's code roughly categorizes monsters as creatures of no
           sentience who are deemed a threat to human society. Because of that, a

@@ -24,6 +24,13 @@ export default function Layout({ children }) {
         padding-top: ${rhythm(1.5)};
       `}
     >
+      {/* Any good styling library will come with a way to make Global styles.
+      Here's how we do it in @emotion, but it's similar with Styled Components too.
+      You import the provided "Global" component and write CSS in the "styles" prop that it expects.
+      Notice it's "styles" versus the "style" prop we put on normal html elements. 
+      They just happen to be named similarly. (This is one reason i prefer Styled Components) 
+      Here's a concise article about how to do it in Styled Components: https://scalablecss.com/styled-components-global-styles/
+      */}
       <Global
         styles={css`
           h1 {
@@ -39,6 +46,11 @@ export default function Layout({ children }) {
           }
         `}
       />
+      {/* I refactored the markup here because I wanted to show how you could
+      accomplish the same layout with less repetitive CSS.
+
+      In general, if you find yourself reaching for css "float", you can
+      probably achieve what you're going for much easier with display: flex. */}
       <header
         css={css`
           display: flex;
@@ -71,6 +83,10 @@ export default function Layout({ children }) {
             {data.site.siteMetadata.title}
           </h3>
         </Link>
+        {/* Made changes to the markup to make the HTML more semantic
+        Added a <header></header> wrapper and wrapped the nav links in
+        a <nav></nav>. This provides more context to screen readers
+        for accessibility */}
         <nav>
           <ul>
             <li>

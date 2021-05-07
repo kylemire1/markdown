@@ -15,6 +15,8 @@ export default function About({ data }) {
           considered the love of his life despite their tumultuous relationship,
           and became Ciri's adoptive father.
         </p>
+        {/* In Gatsby, we want to use their optimized image components as much as possible.
+        Check out the docs: https://www.gatsbyjs.com/plugins/gatsby-plugin-image/  */}
         <StaticImage
           src="https://i.pinimg.com/originals/37/96/eb/3796ebefb26c38d7bfa1ae0097a02916.jpg"
           alt="Geralt"
